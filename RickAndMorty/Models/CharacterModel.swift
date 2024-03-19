@@ -6,17 +6,37 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct CharacterResponse:Decodable {
     let results: [CharacterModel]
 }
 
 struct CharacterModel: Decodable, Identifiable {
-    var id:Int
+    let id: Int 
     let name: String
+    let status:String
+    let gender:String
+    let origin:Origin
     let species: String
     let image:String
     
+    struct Origin:Decodable{
+        let name:String
+    }
+    
+    var statusColor: Color {
+        switch status {
+        case "Alive":
+            return .green
+        case "Dead":
+            return .red
+        default:
+            return .gray
+        }
+    }
+    
+
 }
 
 

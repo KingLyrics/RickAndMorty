@@ -14,6 +14,7 @@
 		A8A2053B2BA9E95B00FD5C84 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A2053A2BA9E95B00FD5C84 /* CharacterModel.swift */; };
 		A8A205432BA9EA4800FD5C84 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A205422BA9EA4800FD5C84 /* CharacterViewModel.swift */; };
 		A8A205452BA9ECB600FD5C84 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A205442BA9ECB600FD5C84 /* CharacterListView.swift */; };
+		A8A205472BAA11AB00FD5C84 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A205462BAA11AB00FD5C84 /* CharacterDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		A8A2053A2BA9E95B00FD5C84 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		A8A205422BA9EA4800FD5C84 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		A8A205442BA9ECB600FD5C84 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
+		A8A205462BAA11AB00FD5C84 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				A8A205372BA9E7B900FD5C84 /* CharacterCardView.swift */,
+				A8A205462BAA11AB00FD5C84 /* CharacterDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				A8A205452BA9ECB600FD5C84 /* CharacterListView.swift in Sources */,
 				A8A205382BA9E7B900FD5C84 /* CharacterCardView.swift in Sources */,
 				A8A205432BA9EA4800FD5C84 /* CharacterViewModel.swift in Sources */,
+				A8A205472BAA11AB00FD5C84 /* CharacterDetailView.swift in Sources */,
 				A8A2053B2BA9E95B00FD5C84 /* CharacterModel.swift in Sources */,
 				A8A205292BA9541800FD5C84 /* RickAndMortyApp.swift in Sources */,
 			);

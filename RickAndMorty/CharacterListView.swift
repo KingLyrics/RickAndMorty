@@ -24,7 +24,7 @@ struct CharacterListView: View {
                                 selectedCharacter = character
                         }
                             .sheet(item: $selectedCharacter) { character in
-                                Text(character.name)
+                                CharacterDetailView(character: character)
                             }
                     }
                 }

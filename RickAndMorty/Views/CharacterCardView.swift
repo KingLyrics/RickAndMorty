@@ -40,5 +40,5 @@ struct CharacterCardView: View {
     }
 }
 #Preview {
-    CharacterCardView(character: CharacterModel(id: 1, name: "Rick Sanchez", species: "Human", image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"))
+    CharacterCardView(character: CharacterModel(id: 10, name: "Rick Sanchez", status: "Alive", gender: "Male", origin: CharacterModel.Origin(name: "Earth"), species: "Human", image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg"))
 }
