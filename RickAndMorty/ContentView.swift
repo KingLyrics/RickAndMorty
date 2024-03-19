@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let columns = [GridItem(.flexible()), GridItem(.flexible())]
+    let columns = [GridItem(.flexible()), GridItem(.flexible())]	
     var body: some View {
         NavigationStack{
             ScrollView{
