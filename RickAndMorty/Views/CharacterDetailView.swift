@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct CharacterDetailView: View {
-    let  character:CharacterModel
-    
+    let character:CharacterModel
+    @Environment(\.dismiss) var dismiss
+
     var body: some View {
+        
         VStack(alignment: .leading, spacing: 10) {
-           
+            HStack{
+                Spacer()
+                Button(action: {
+                    dismiss()
+                }, label: {
+                    Text("Dismiss")
+                })
+            }
+            
             AsyncImage(url: URL(string: character.image)!) { image in
                 image
                     .resizable()
@@ -25,7 +35,7 @@ struct CharacterDetailView: View {
                 .font(.title)
                 .fontWeight(.semibold)
             HStack {
-                Text("Status: ")
+                Text("Status:")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 Text(character.status)
                 .foregroundStyle(character.statusColor)
@@ -35,6 +45,7 @@ struct CharacterDetailView: View {
                 .font(.title)
         }
         .padding(.top,10)
+        .padding()
     
         Spacer()
     }
