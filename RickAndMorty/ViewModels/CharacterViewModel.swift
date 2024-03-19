@@ -11,19 +11,32 @@ class CharacterViewModel:ObservableObject{
     @Published var allCharacters: [CharacterModel] = []
     
     init() {
-        Task{
-          await  getAllCharacters()
+        Task {
+           try await getAllCharacters()
         }
     }
     
-    func getAllCharacters()async{
-        guard let url = URL(string: "https://rickandmortyapi.com/api/character") else { return }
-        do{
-            let (data, response) = try await URLSession.shared.data(from: url)
-            let decodedCharacters = try JSONDecoder().decode([CharacterModel].self, from: data)
-            allCharacters = decodedCharacters
-        }catch{
-            print("Error fetching the characters: \(error)")
+    func getAllCharacters() async throws {
+        guard let url = URL(string: "https://rickandmortyapi.com/api/character") else {
+            throw URLError.invalidUrl
         }
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let decoder = JSONDecoder()
+        
+        let response = try decoder.decode(CharacterResponse.self, from: data)
+        
+        // Access the characters array from the response
+        let characters = response.results
+        
+        self.allCharacters = characters
+        
+    }
+
+
+
+    
+    enum URLError:Error{
+        case invalidUrl, badresponse, invalidData
     }
 }

@@ -9,21 +9,28 @@ import SwiftUI
 
 struct CharacterCardView: View {
     
-    let characterName:String
-    let characterSpecies:String
-    let imageName:String
+    let character:CharacterModel
     
     var body: some View {
         ZStack {
             Color.secondary
             VStack(spacing:10){
-                Image(imageName)
-                    .resizable()
-                    .scaledToFit()
-                Text("Name: \(characterName)")
+                AsyncImage(url: URL(string: character.image)) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                } placeholder: {
+                    ProgressView()
+                }
+
+                
+                
+                Text("Name: \(character.name)")
                     .font(.title3)
-                Text("Species:\(characterSpecies)")
+                    .fontWeight(.semibold)
+                Text("Species:\(character.species)")
                     .font(.title3)
+                    .fontWeight(.semibold)
             }
             .foregroundStyle(.white)
             .padding(.bottom)
@@ -33,5 +40,5 @@ struct CharacterCardView: View {
     }
 }
 #Preview {
-    CharacterCardView(characterName: "Rick", characterSpecies: "Human", imageName: "rick")
+    CharacterCardView(character: CharacterModel(id: 1, name: "Rick Sanchez", species: "Human", image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"))
 }
