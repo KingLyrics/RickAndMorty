@@ -15,12 +15,12 @@ struct CharacterCardView: View {
         ZStack {
             Color.secondary
             VStack(spacing:10){
-                AsyncImage(url: URL(string: character.image)) { image in
+                AsyncImage(url: URL(string: character.image)!) { image in
                     image
                         .resizable()
                         .scaledToFit()
                 } placeholder: {
-                    ProgressView()
+                    Text("Loading...")
                 }
 
                 

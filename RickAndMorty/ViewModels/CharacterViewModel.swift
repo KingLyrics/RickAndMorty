@@ -16,8 +16,9 @@ class CharacterViewModel:ObservableObject{
         }
     }
     
+   private let baseUrl:String = "https://rickandmortyapi.com/api/character"
     func getAllCharacters() async throws {
-        guard let url = URL(string: "https://rickandmortyapi.com/api/character") else {
+        guard let url = URL(string: baseUrl) else {
             throw URLError.invalidUrl
         }
         
@@ -29,9 +30,23 @@ class CharacterViewModel:ObservableObject{
         // Access the characters array from the response
         let characters = response.results
         
-        self.allCharacters = characters
+        DispatchQueue.main.async{
+            self.allCharacters = characters
+        }
+    }
+    
+    func getCharacterDetail(byId id:Int) async throws -> CharacterModel{
+        guard let url = URL(string: baseUrl + "\(id)") else{
+            throw URLError.invalidUrl
+        }
+        let (data, _) = try await URLSession.shared.data(from:url)
+        let decoder = JSONDecoder()
+        
+        let character = try decoder.decode(CharacterModel.self, from: data)
+        return character
         
     }
+    
 
 
 
