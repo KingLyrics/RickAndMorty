@@ -13,27 +13,11 @@ struct ContentView: View {
         NavigationStack{
             ScrollView{
                 LazyVGrid(columns: columns) {
-                    ZStack {
-                        Color.secondary
-                        VStack(spacing:10){
-                            Image("rick")
-                                .resizable()
-                                .scaledToFit()
-                            Text("Name: Rick")
-                                .font(.title3)
-                            Text("Species:Human")
-                                .font(.title3)
-                        }
-                        .foregroundStyle(.white)
-                        .padding(.bottom)
-                    }
-                    .clipShape(RoundedRectangle(cornerRadius: 5))
-                    .padding()
-                    
-                }
+                    CharacterCardView(characterName: "Rick", characterSpecies: "Human", imageName: "rick")                }
             }
             .navigationTitle("Rick and Morty")
         }
+        
        
     }
 }
@@ -41,3 +25,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
+
