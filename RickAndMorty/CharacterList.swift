@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-struct CharacterListView: View {
+struct CharacterList: View {
     @StateObject var characterViewModel  = CharacterViewModel()
     @State var isShowing = false
     @State var selectedCharacter:CharacterModel? = nil
+    @State var searchText = ""
     
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
     
@@ -30,6 +31,7 @@ struct CharacterListView: View {
                 }
             }
             .navigationTitle("Rick and Morty")
+            .searchable(text: $searchText, prompt: "Seach for a character")
         }
     }
 }
@@ -37,5 +39,5 @@ struct CharacterListView: View {
 
 
 #Preview {
-    CharacterListView()
+    CharacterList()
 }

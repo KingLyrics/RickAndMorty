@@ -13,7 +13,7 @@ struct CharacterDetailView: View {
 
     var body: some View {
         
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(spacing: 10) {
             HStack{
                 Spacer()
                 Button(action: {
@@ -22,6 +22,7 @@ struct CharacterDetailView: View {
                     Text("Dismiss")
                 })
             }
+           Spacer()
             
             AsyncImage(url: URL(string: character.image)!) { image in
                 image
@@ -43,6 +44,7 @@ struct CharacterDetailView: View {
             }
             Text("Gender: \(character.gender)")
                 .font(.title)
+            Spacer()
         }
         .padding(.top,10)
         .padding()

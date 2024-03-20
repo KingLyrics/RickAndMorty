@@ -23,17 +23,19 @@ struct CharacterCardView: View {
                     Text("Loading...")
                 }
 
-                
-                
-                Text("Name: \(character.name)")
-                    .font(.title3)
+                VStack(alignment:.leading) {
+                    Text("Name: \(character.name)")
+                        .font(.subheadline)
                     .fontWeight(.semibold)
-                Text("Species:\(character.species)")
-                    .font(.title3)
-                    .fontWeight(.semibold)
+                    Text("Species:\(character.species)")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                }
+             
             }
             .foregroundStyle(.white)
             .padding(.bottom)
+      
         }
         .clipShape(RoundedRectangle(cornerRadius: 5))
         .padding()

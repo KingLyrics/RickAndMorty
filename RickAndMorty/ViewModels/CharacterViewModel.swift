@@ -35,17 +35,7 @@ class CharacterViewModel:ObservableObject{
         }
     }
     
-    func getCharacterDetail(byId id:Int) async throws -> CharacterModel{
-        guard let url = URL(string: baseUrl + "\(id)") else{
-            throw URLError.invalidUrl
-        }
-        let (data, _) = try await URLSession.shared.data(from:url)
-        let decoder = JSONDecoder()
-        
-        let character = try decoder.decode(CharacterModel.self, from: data)
-        return character
-        
-    }
+ 
     
 
 
